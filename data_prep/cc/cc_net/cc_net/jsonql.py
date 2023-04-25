@@ -914,8 +914,8 @@ class SimpleIO(Protocol):
     def __exit__(self, exc_type, exc_value, traceback):
         ...
 
-
-def open_read(filename: ReadableFileLike) -> Iterable[str]: #参数为可迭代的语料文件下载地址
+# 参数为可迭代的语料文件下载地址
+def open_read(filename: ReadableFileLike) -> Iterable[str]: 
     """Open the given file, list of files or files matching the given glob and read lines.
 
     `filename` is None or "-" -> reads from stdin
