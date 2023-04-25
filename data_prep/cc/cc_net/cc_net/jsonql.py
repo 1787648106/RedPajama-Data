@@ -915,7 +915,7 @@ class SimpleIO(Protocol):
         ...
 
 
-def open_read(filename: ReadableFileLike) -> Iterable[str]:
+def open_read(filename: ReadableFileLike) -> Iterable[str]: #参数为可迭代的语料文件下载地址
     """Open the given file, list of files or files matching the given glob and read lines.
 
     `filename` is None or "-" -> reads from stdin
