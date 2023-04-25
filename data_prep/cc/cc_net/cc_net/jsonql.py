@@ -1108,7 +1108,7 @@ def request_get_content(url: str, n_retry: int = 3) -> bytes:
     logging.info(
         f"Downloaded {url} [{r.status_code}] took {dl_time:.0f}s ({dl_speed:.1f}kB/s)"
     )
-    return r.content
+    return r.content #返回字节流语料文件
 
 
 def open_remote_file(url: str, cache: Path = None) -> Iterable[str]:
@@ -1121,8 +1121,8 @@ def open_remote_file(url: str, cache: Path = None) -> Iterable[str]:
     # TODO: open the remote file in streaming mode.
     # The hard part is that we need to write the content on disk at the same time,
     # to implement disk caching.
-    raw_bytes = request_get_content(url)
-    content = io.BytesIO(raw_bytes)
+    raw_bytes = request_get_content(url) #下载语料文件
+    content = io.BytesIO(raw_bytes) #将语料文件读取到内存中
     if url.endswith(".gz"):
         f: TextIO = gzip.open(content, mode="rt")  # type: ignore
     else:
