@@ -160,7 +160,7 @@ def _split_array(array, sep):
     if last != len(array):
         yield array[last:]
 
-
+# 此处开始执行，file为dump内语料下载地址汇总文件
 def main(raw_args):
     parser = get_parser()
     pipeline = []
